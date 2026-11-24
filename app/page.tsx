@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ArrowDown, ArrowUp, ArrowUpRight, Camera, Mail, MapPin, Phone } from 'lucide-react';
 import Navigation from './navigation';
 import Schedule from './schedule';
 
@@ -52,19 +53,19 @@ export default function Home() {
               <h1 id="hero-title">Come train<br /><em>with us.</em></h1>
               <p className="hero-lede">Brazilian jiu-jitsu, kickboxing and MMA in Manchester. Beginners welcome. Learn the fundamentals, train with good people, and keep getting better.</p>
               <div className="hero-actions">
-                <a className="button button-accent" href={enquiry('Book my free introductory class')}>Book your free class <span aria-hidden="true">↗</span></a>
-                <a className="text-link light-link" href="#timetable">View the timetable <span aria-hidden="true">↓</span></a>
+                <a className="button button-accent" href={enquiry('Book my free introductory class')}>Book your free class <ArrowUpRight aria-hidden="true" /></a>
+                <a className="text-link light-link" href="#timetable">View the timetable <ArrowDown aria-hidden="true" /></a>
               </div>
             </div>
             <div className="hero-side-note" aria-hidden="true">TRAIN HARD. FEEL AT HOME.</div>
           </div>
-          <div className="hero-bottom wrap"><span>Brazilian jiu-jitsu · Kickboxing · MMA</span><span>Manchester city centre</span><span>Explore classes ↓</span></div>
+          <div className="hero-bottom wrap"><span>Brazilian jiu-jitsu · Kickboxing · MMA</span><span>Manchester city centre</span><a href="#classes">Explore classes <ArrowDown aria-hidden="true" /></a></div>
         </section>
 
         <section className="intro-strip" aria-label="Training at Predators"><div className="wrap intro-strip-inner">
           <p>Good training.<br /><strong>Good people.</strong></p>
           <p>Walk in as a beginner. Train alongside people who want you to improve. Predators has been building skill and community in Manchester since 2006.</p>
-          <a className="text-link" href="#about">Meet the academy <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="#about">Meet the academy <ArrowUpRight aria-hidden="true" /></a>
         </div></section>
 
         <section className="section classes-section" id="classes" aria-labelledby="classes-title"><div className="wrap">
@@ -80,7 +81,7 @@ export default function Home() {
                   <span className="programme-number">{programme.number} / {programme.short}</span>
                   <div><h3>{programme.title}</h3><p>{programme.description}</p>
                     <div className="programme-tags">{programme.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                    <a className="programme-link" href="#timetable">See class times <span aria-hidden="true">↗</span></a>
+                    <a className="programme-link" href="#timetable">See class times <ArrowUpRight aria-hidden="true" /></a>
                   </div>
                 </div>
               </article>
@@ -90,7 +91,7 @@ export default function Home() {
             <span className="gi-note-index">BJJ / TWO FORMATS</span>
             <div><strong>GI</strong><p>Train in the traditional jacket and trousers. Work with grips, control and technique.</p></div>
             <div><strong>NO-GI</strong><p>Train without the jacket. Focus on movement, control and submissions without clothing grips.</p></div>
-            <a href="#timetable" aria-label="See Gi and No-Gi times in the timetable">↗</a>
+            <a href="#timetable" aria-label="See Gi and No-Gi times in the timetable"><ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div></section>
 
@@ -101,7 +102,7 @@ export default function Home() {
           <div className="story-copy"><p className="eyebrow">Our academy</p><h2 id="story-title">Train hard.<br /><em>Feel at home.</em></h2>
             <p>Gavin Boardman founded Predators in 2006 to create a positive place to train. The idea is simple: solid fundamentals, steady improvement and a group that helps every member grow.</p>
             <p>Whether you&apos;re taking your first class or preparing to compete, you&apos;ll train with respect and be part of the team.</p>
-            <a className="button button-dark" href={enquiry('Visit Predators MMA Academy')}>Come and meet us <span aria-hidden="true">↗</span></a>
+            <a className="button button-dark" href={enquiry('Visit Predators MMA Academy')}>Come and meet us <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div></section>
 
@@ -109,7 +110,7 @@ export default function Home() {
           <div className="social-heading">
             <div><p className="eyebrow light">Inside the academy</p><h2 id="social-title">Life on<br />the mats.</h2></div>
             <div><p>From padwork to grappling rounds, the best way to understand Predators is to see the team train. Follow the gym for a closer look.</p>
-              <a className="button button-accent" href="https://www.instagram.com/predators_mma_gym/" target="_blank" rel="noopener noreferrer">Follow @predators_mma_gym <span aria-hidden="true">↗</span></a>
+              <a className="button button-accent" href="https://www.instagram.com/predators_mma_gym/" target="_blank" rel="noopener noreferrer">Follow us on Instagram <Camera aria-hidden="true" /></a>
             </div>
           </div>
           <div className="social-gallery">
@@ -129,7 +130,7 @@ export default function Home() {
             <article className="video-item"><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/JC3x1hedbLo" title="See Brazilian jiu-jitsu, kickboxing and MMA classes at Predators" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><h3>Inside Predators</h3><p>Take a look at the academy and the people you&apos;ll train with.</p></article>
             <article className="video-item"><div className="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/BWK5ka7vf7A" title="Watch a kickboxing fundamentals class at Predators" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><h3>A kickboxing class</h3><p>See the fundamentals in action, including partner drills and padwork.</p></article>
           </div>
-          <a className="text-link video-instagram-link" href="https://www.instagram.com/predators_mma_gym/reels/" target="_blank" rel="noopener noreferrer">Watch more videos on Instagram <span aria-hidden="true">↗</span></a>
+          <a className="text-link video-instagram-link" href="https://www.instagram.com/predators_mma_gym/reels/" target="_blank" rel="noopener noreferrer">Watch more videos on Instagram <Camera aria-hidden="true" /></a>
         </div></section>
 
         <section className="quote-section" aria-label="Member testimonial"><div className="wrap quote-inner">
@@ -139,16 +140,16 @@ export default function Home() {
         </div></section>
 
         <section className="visit-section" id="contact" aria-labelledby="visit-title"><div className="wrap visit-grid">
-          <div><p className="eyebrow">Your first step</p><h2 id="visit-title">Your first class<br /><em>starts here.</em></h2><p>Tell us what you&apos;d like to try. We&apos;ll help you find the right first class.</p><a className="button button-accent" href={enquiry('Book my free class at Predators MMA')}>Book your free class <span aria-hidden="true">↗</span></a></div>
+          <div><p className="eyebrow">Your first step</p><h2 id="visit-title">Your first class<br /><em>starts here.</em></h2><p>Tell us what you&apos;d like to try. We&apos;ll help you find the right first class.</p><a className="button button-accent" href={enquiry('Book my free class at Predators MMA')}>Book your free class <ArrowUpRight aria-hidden="true" /></a></div>
           <div className="visit-details">
-            <div><span>01 / VISIT</span><p>1st Floor, 15 Chatley Street<br />Entrance on Whitfield Street<br />Manchester M3 1HU</p><a href="https://www.google.com/maps/search/?api=1&query=15+Chatley+Street+Manchester+M3+1HU" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div>
-            <div><span>02 / CALL</span><a href="tel:+447897313488">07897 313 488 ↗</a></div>
-            <div><span>03 / EMAIL</span><a href={'mailto:' + email}>{email} ↗</a></div>
-            <div><span>04 / FOLLOW</span><a href="https://www.instagram.com/predators_mma_gym/" target="_blank" rel="noopener noreferrer">@predators_mma_gym ↗</a></div>
+            <div><span><MapPin aria-hidden="true" /> Visit</span><p>1st Floor, 15 Chatley Street<br />Entrance on Whitfield Street<br />Manchester M3 1HU</p><a href="https://www.google.com/maps/search/?api=1&query=15+Chatley+Street+Manchester+M3+1HU" target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight aria-hidden="true" /></a></div>
+            <div><span><Phone aria-hidden="true" /> Call</span><a href="tel:+447897313488">07897 313 488 <ArrowUpRight aria-hidden="true" /></a></div>
+            <div><span><Mail aria-hidden="true" /> Email</span><a href={'mailto:' + email}>{email} <ArrowUpRight aria-hidden="true" /></a></div>
+            <div><span><Camera aria-hidden="true" /> Follow</span><a href="https://www.instagram.com/predators_mma_gym/" target="_blank" rel="noopener noreferrer">@predators_mma_gym <ArrowUpRight aria-hidden="true" /></a></div>
           </div>
         </div></section>
       </main>
-      <footer className="site-footer"><div className="wrap footer-inner"><a className="footer-brand" href="#top" aria-label="Predators MMA, back to top">Predators MMA</a><span>© 2026 Predators MMA &amp; BJJ Academy</span><a href="#timetable">Timetable ↑</a></div></footer>
+      <footer className="site-footer"><div className="wrap footer-inner"><a className="footer-brand" href="#top" aria-label="Predators MMA, back to top">Predators MMA</a><span>© 2026 Predators MMA &amp; BJJ Academy</span><a href="#timetable">Timetable <ArrowUp aria-hidden="true" /></a></div></footer>
     </>
   );
 }

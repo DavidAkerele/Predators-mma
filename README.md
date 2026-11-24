@@ -14,6 +14,10 @@ production build. The timetable filters use shadcn/ui Toggle Group and the
 mobile menu uses its Button component, with Tailwind CSS v4 for the shared
 component styles.
 
+The accent colour is the dominant yellow from the official logo (`#FFF200`).
+Interface icons come from Lucide React. The stylesheet starts with phone layouts
+and adds larger layouts at 600px, 800px and 1000px.
+
 Training photographs and the official logo are sourced from the academy's
 existing website and stored in public/images. Each visible training photograph
 appears once. The browser icon is the existing site's icon. Booking links open
