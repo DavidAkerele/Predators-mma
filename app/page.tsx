@@ -1,32 +1,126 @@
-'use client';
-import { useState } from 'react';
+import Image from 'next/image';
+import Navigation from './navigation';
+import Schedule from './schedule';
 
 const email = 'predatorsmmagym@gmail.com';
-const enquiry = (subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-const heroImage = 'https://static.wixstatic.com/media/92298b_b02e31dec87a47b39fcecb1b3ad07636~mv2_d_5184_3888_s_4_2.jpg';
-const programs = [
-  { title: <>Mixed Martial<br />Arts</>, name: 'MMA', kicker: '01 / ALL LEVELS', image: 'https://static.wixstatic.com/media/92298b_c6dde605ee1046a69a7f2b7abb7459b0~mv2.webp' },
-  { title: <>Kickboxing</>, name: 'Kickboxing', kicker: '02 / STRIKING', image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=900&q=85' },
-  { title: <>Brazilian<br />Jiu-Jitsu</>, name: 'BJJ', kicker: '03 / GRAPPLING', image: 'https://static.wixstatic.com/media/92298b_58fb27e98f1a43f7a01a557426025b00~mv2.webp' },
-  { title: <>Kids Martial<br />Arts</>, name: 'Kids martial arts', kicker: '04 / YOUNG ATHLETES', image: heroImage },
+const enquiry = (subject: string) => 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+
+const programmes = [
+  {
+    number: '01', title: 'Brazilian jiu-jitsu', short: 'BJJ',
+    description: 'Learn to control, escape and submit with technique. Start with fundamentals, then develop your game in Gi and No-Gi classes.',
+    tags: ['Fundamentals', 'Gi', 'No-Gi'],
+    image: '/images/predators-gi.jpg',
+    alt: 'Brazilian jiu-jitsu training on the mats at Predators',
+    className: 'programme-bjj',
+  },
+  {
+    number: '02', title: 'Kickboxing', short: 'Striking',
+    description: 'Build footwork, timing and striking confidence. Fundamentals classes give you a solid base before advanced training.',
+    tags: ['Fundamentals', 'Advanced'],
+    image: '/images/predators-training.jpg',
+    alt: 'Kickboxing pad work in a Predators training session',
+    className: 'programme-kickboxing',
+  },
+  {
+    number: '03', title: 'Mixed martial arts', short: 'MMA',
+    description: 'Bring striking and grappling together. Advanced MMA and Saturday sparring are listed on the adult timetable.',
+    tags: ['Advanced', 'Sparring'],
+    image: '/images/predators-nogi.jpg',
+    alt: 'Grappling instruction at Predators MMA Academy',
+    className: 'programme-mma',
+  },
 ];
-const reviews = [
-  { quote: 'The first time I entered Predators I knew there was something special about the place', author: 'Steve' },
-  { quote: 'The best coach and group of guys to train with — an ego free zone', author: 'Wasim' },
-  { quote: 'I thought it would be really intimidating, how wrong I was! Predators is welcoming for all abilities', author: 'Mike' },
-];
+
 export default function Home() {
-  const [open, setOpen] = useState(false);
-  return <>
-    <header><div className="wrap inner"><a className="brand" href="#top" aria-label="Predators MMA home"><div className="brandmark">P</div><div className="brandtext">PREDATORS<small>MMA &amp; BJJ ACADEMY</small></div></a><button className="menu" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(!open)}>☰</button><nav className={open ? 'open' : ''} onClick={() => setOpen(false)}><a href="#classes">Classes</a><a href="#about">Our story</a><a href="#reviews">Testimonials</a><a href="#contact">Contact</a><a className="navbtn" href={enquiry('Free introductory class enquiry')}>Book a free class ↗</a></nav></div></header>
-    <main id="top">
-      <section className="hero"><div className="heroimg" /><div className="wrap content"><span className="eyebrow">Manchester&apos;s home for martial arts · Est. 2006</span><h1>TRAIN<br />WITH <em>PURPOSE.</em></h1><p>Build confidence. Find your edge. Join a team that makes you better. MMA, kickboxing and Brazilian Jiu-Jitsu for every level.</p><div className="actions"><a className="btn" href={enquiry('Book my free MMA class')}>Book your free class <span>↗</span></a><a className="btn outline" href="#classes">Explore classes <span>↓</span></a></div></div><span className="vertical">STRONGER TOGETHER. BETTER EVERY DAY.</span></section>
-      <section className="stats"><div className="stat"><strong>2006</strong><span>Established<br />in Manchester</span></div><div className="stat"><strong>4</strong><span>Training<br />disciplines</span></div><div className="stat"><strong>1</strong><span>Team.<br />Every level.</span></div></section>
-      <section className="section" id="classes"><div className="wrap"><div className="sectionhead"><div><span className="eyebrow">Find your discipline</span><h2>BUILT FOR<br />EVERY FIGHTER.</h2></div><p>Whether you&apos;re stepping on the mats for the first time or sharpening your competitive game, there&apos;s a place for you here.</p></div><div className="programs">{programs.map(p => <a className="program" key={p.name} href={enquiry(`${p.name} class enquiry`)}><div className="picture" style={{backgroundImage:`url('${p.image}')`}} /><div className="info"><span className="index">{p.kicker}</span><h3>{p.title}</h3><span className="arrow">↗</span></div></a>)}</div></div></section>
-      <section className="section about" id="about"><div className="wrap aboutgrid"><div className="photo"><img src={heroImage} alt="Martial arts training at Predators MMA Academy" loading="lazy" /><div className="photolabel">NO EGO. JUST PROGRESS.</div></div><div><span className="eyebrow">More than a gym</span><h2>A PLACE TO<br />BELONG.<br />A REASON TO<br />GROW.</h2><p>Founded in 2006 by Gavin Boardman, Predators was built on a simple belief: great groups make great individuals.</p><p>From complete beginners to professional competitors, we train together with respect, discipline and a commitment to improving a little every day.</p><div className="ticks"><div><b>✓</b> Welcoming beginners</div><div><b>✓</b> Expert coaching</div><div><b>✓</b> Real-world skills</div><div><b>✓</b> Supportive community</div></div><a className="btn darkbtn" href="#contact">Come meet the team ↗</a></div></div></section>
-      <section className="section quote-section" id="reviews"><div className="wrap"><div className="sectionhead"><div><span className="eyebrow">From our members</span><h2>THE PEOPLE<br />SAY IT BEST.</h2></div></div><div className="quotes">{reviews.map(r => <article className="quote" key={r.author}><div className="stars">★★★★★</div><p>“{r.quote}”</p><strong>{r.author} · Member</strong></article>)}</div></div></section>
-      <section className="banner"><div className="wrap"><span className="eyebrow">Your first step starts here</span><h2>YOU DON&apos;T HAVE TO BE GREAT TO START. JUST START.</h2><a className="btn" href={enquiry('I would like to book a free class')}>Claim your free class ↗</a></div></section>
-      <section className="section" id="contact"><div className="wrap contact"><div><span className="eyebrow">Find us in Manchester</span><h2>STEP INSIDE.</h2><p>1st Floor, 15 Chatley Street<br />Entrance on Whitfield Street<br />Manchester M3 1HU, United Kingdom</p><p><a href="tel:+447897313488">07897 313 488</a></p><p><a href={`mailto:${email}`}>{email}</a></p><p><a href="https://www.google.com/maps/search/?api=1&query=15+Chatley+Street+Manchester+M3+1HU" target="_blank" rel="noopener noreferrer">Get directions ↗</a></p></div><div className="contactbox"><span className="eyebrow">Ready when you are</span><h3>YOUR FIRST CLASS IS ON US.</h3><p>Tell us the discipline you&apos;re interested in and we&apos;ll help you get started. No experience necessary.</p><a className="btn" href={`mailto:${email}?subject=Free%20introductory%20class%20booking&body=Hi%20Predators%2C%0A%0AI'd%20like%20to%20book%20a%20free%20class.%0A%0AClass%3A%0APreferred%20day%3A%0AName%3A`}>Enquire about a free class ↗</a></div></div></section>
-    </main><footer className="wrap footer"><span>© 2026 Predators MMA &amp; BJJ Academy. Unofficial redesign concept.</span><a href="https://www.manchester-mma.com/" target="_blank" rel="noopener noreferrer">Original academy website ↗</a></footer>
-  </>;
+  return (
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <div className="topline"><div className="wrap topline-inner">
+        <span>Manchester, UK <span aria-hidden="true">/</span> Est. 2006</span>
+        <span>All levels welcome <span aria-hidden="true">/</span> Your first class is free</span>
+      </div></div>
+      <Navigation />
+
+      <main id="main">
+        <section className="hero" id="top" aria-labelledby="hero-title">
+          <div className="hero-photo"><Image src="/images/predators-training.jpg" alt="Members practising kickboxing at Predators MMA in Manchester" fill priority sizes="(max-width: 800px) 100vw, 60vw" /></div>
+          <div className="hero-wash" />
+          <div className="wrap hero-content">
+            <div className="hero-copy">
+              <p className="eyebrow light">Predators MMA &amp; BJJ Academy <span className="eyebrow-line" /></p>
+              <h1 id="hero-title">GET ON<br />THE <em>MATS.</em></h1>
+              <p className="hero-lede">Brazilian jiu-jitsu, kickboxing and MMA in Manchester. Learn the fundamentals, train with good people, and keep getting better.</p>
+              <div className="hero-actions">
+                <a className="button button-accent" href={enquiry('Book my free introductory class')}>Book your free class <span aria-hidden="true">↗</span></a>
+                <a className="text-link light-link" href="#timetable">View the timetable <span aria-hidden="true">↓</span></a>
+              </div>
+            </div>
+            <div className="hero-side-note" aria-hidden="true">TRAIN HARD. LEAVE YOUR EGO AT THE DOOR.</div>
+          </div>
+          <div className="hero-bottom wrap"><span>01 / 03 DISCIPLINES</span><span>MANCHESTER CITY CENTRE</span><span>SCROLL TO EXPLORE ↓</span></div>
+        </section>
+
+        <section className="intro-strip" aria-label="Training at Predators"><div className="wrap intro-strip-inner">
+          <p>ONE TEAM.<br /><strong>EVERY LEVEL.</strong></p>
+          <p>Walk in as a beginner. Train alongside people who want you to improve. Predators has been building skill and community in Manchester since 2006.</p>
+          <a className="text-link" href="#about">Meet the academy <span aria-hidden="true">↗</span></a>
+        </div></section>
+
+        <section className="section classes-section" id="classes" aria-labelledby="classes-title"><div className="wrap">
+          <div className="section-heading">
+            <div><p className="eyebrow">Find your discipline</p><h2 id="classes-title">THREE WAYS<br />TO TRAIN.</h2></div>
+            <p>Start with the fundamentals, or bring your experience to the advanced sessions. Choose your discipline and find your place on the mats.</p>
+          </div>
+          <div className="programme-grid">
+            {programmes.map((programme) => (
+              <article className={'programme ' + programme.className} key={programme.number}>
+                <div className="programme-image"><Image src={programme.image} alt={programme.alt} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+                <div className="programme-content">
+                  <span className="programme-number">{programme.number} / {programme.short}</span>
+                  <div><h3>{programme.title}</h3><p>{programme.description}</p>
+                    <div className="programme-tags">{programme.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                    <a className="programme-link" href="#timetable">See class times <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="gi-note">
+            <span className="gi-note-index">BJJ / TWO FORMATS</span>
+            <div><strong>GI</strong><p>Train in the traditional jacket and trousers. Work with grips, control and technique.</p></div>
+            <div><strong>NO-GI</strong><p>Train without the jacket. Focus on movement, control and submissions without clothing grips.</p></div>
+            <a href="#timetable" aria-label="See Gi and No-Gi times in the timetable">↗</a>
+          </div>
+        </div></section>
+
+        <Schedule />
+
+        <section className="section story-section" id="about" aria-labelledby="story-title"><div className="wrap story-grid">
+          <div className="story-image"><Image src="/images/predators-nogi.jpg" alt="Coach demonstrating a grappling technique to a Predators class" fill sizes="(max-width: 760px) 100vw, 48vw" /><span className="image-caption">THE WORK IS BETTER TOGETHER.</span></div>
+          <div className="story-copy"><p className="eyebrow">Our academy</p><h2 id="story-title">LEAVE THE<br />EGO. KEEP<br />THE <em>WORK.</em></h2>
+            <p>Gavin Boardman founded Predators in 2006 to create a positive place to train. The idea is simple: solid fundamentals, steady improvement and a group that helps every member grow.</p>
+            <p>Whether you&apos;re taking your first class or preparing to compete, you&apos;ll train with respect and be part of the team.</p>
+            <a className="button button-dark" href={enquiry('Visit Predators MMA Academy')}>Come and meet us <span aria-hidden="true">↗</span></a>
+          </div>
+        </div></section>
+
+        <section className="quote-section" aria-label="Member testimonial"><div className="wrap quote-inner">
+          <span className="quote-mark" aria-hidden="true">“</span>
+          <blockquote><p>I thought it would be really intimidating. How wrong I was! Predators is welcoming for all abilities.</p><footer>Mike / Predators member</footer></blockquote>
+          <span className="quote-rule" aria-hidden="true" />
+        </div></section>
+
+        <section className="visit-section" id="contact" aria-labelledby="visit-title"><div className="wrap visit-grid">
+          <div><p className="eyebrow">Your first step</p><h2 id="visit-title">COME SEE<br />WHAT WE<br /><em>DO.</em></h2><p>Tell us what you&apos;d like to try. We&apos;ll help you find the right first class.</p><a className="button button-accent" href={enquiry('Book my free class at Predators MMA')}>Book your free class <span aria-hidden="true">↗</span></a></div>
+          <div className="visit-details">
+            <div><span>01 / VISIT</span><p>1st Floor, 15 Chatley Street<br />Entrance on Whitfield Street<br />Manchester M3 1HU</p><a href="https://www.google.com/maps/search/?api=1&query=15+Chatley+Street+Manchester+M3+1HU" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div>
+            <div><span>02 / CALL</span><a href="tel:+447897313488">07897 313 488 ↗</a></div>
+            <div><span>03 / EMAIL</span><a href={'mailto:' + email}>{email} ↗</a></div>
+          </div>
+        </div></section>
+      </main>
+      <footer className="site-footer"><div className="wrap footer-inner"><a className="footer-brand" href="#top">PREDATORS<span>.</span></a><span>© 2026 Predators MMA &amp; BJJ Academy</span><a href="#timetable">Timetable ↑</a></div></footer>
+    </>
+  );
 }
