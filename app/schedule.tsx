@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 type Day = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday';
 type Discipline = 'BJJ' | 'Kickboxing' | 'MMA';
@@ -45,20 +46,20 @@ export default function Schedule() {
     <section className="section timetable-section" id="timetable" aria-labelledby="timetable-title">
       <div className="wrap">
         <div className="section-heading timetable-heading">
-          <div><p className="eyebrow">Plan your week</p><h2 id="timetable-title">FIND YOUR<br />NEXT CLASS.</h2></div>
-          <p>The adult class timetable from the academy handout. Fundamentals are the place to begin; advanced sessions are marked clearly.</p>
+          <div><p className="eyebrow">Plan your week</p><h2 id="timetable-title">Find your<br />next class.</h2></div>
+          <p>Choose a day and a discipline to find a class that suits you. Fundamentals are a good place to begin; advanced sessions are marked clearly.</p>
         </div>
         <div className="schedule-controls">
-          <div className="schedule-control-group" aria-label="Choose a day">
+          <ToggleGroup className="schedule-control-group" aria-label="Choose a day" value={[day]} onValueChange={(value) => setDay((value[0] as 'All week' | Day) || 'All week')}>
             {(['All week', ...days] as Array<'All week' | Day>).map((item) => (
-              <button type="button" key={item} className={day === item ? 'control active' : 'control'} aria-pressed={day === item} onClick={() => setDay(item)}>{item === 'All week' ? 'All week' : item.slice(0, 3)}</button>
+              <ToggleGroupItem value={item} key={item}>{item === 'All week' ? 'All week' : item.slice(0, 3)}</ToggleGroupItem>
             ))}
-          </div>
-          <div className="schedule-control-group discipline-controls" aria-label="Filter by discipline">
+          </ToggleGroup>
+          <ToggleGroup className="schedule-control-group discipline-controls" aria-label="Filter by discipline" value={[discipline]} onValueChange={(value) => setDiscipline((value[0] as 'All classes' | Discipline) || 'All classes')}>
             {disciplines.map((item) => (
-              <button type="button" key={item} className={discipline === item ? 'control active' : 'control'} aria-pressed={discipline === item} onClick={() => setDiscipline(item)}>{item}</button>
+              <ToggleGroupItem value={item} key={item}>{item}</ToggleGroupItem>
             ))}
-          </div>
+          </ToggleGroup>
         </div>
         <div className={'schedule-grid' + (day === 'All week' ? '' : ' single-day')}>
           {visibleDays.map((item) => {
