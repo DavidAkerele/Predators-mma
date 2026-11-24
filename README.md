@@ -15,3 +15,8 @@ production build.
 Training photographs are sourced from the academy's existing website and
 stored in public/images. Booking links open an email enquiry; there is no
 booking backend. The production site is at https://predator-mma.vercel.app.
+
+The Instagram profile at https://www.instagram.com/predators_mma_gym/ is
+linked from the site. The public profile bio confirms that beginners are
+welcome and a free introductory class is offered. The gallery photographs
+come from the academy website, not from Instagram posts.

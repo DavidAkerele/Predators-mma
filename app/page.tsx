@@ -50,7 +50,7 @@ export default function Home() {
             <div className="hero-copy">
               <p className="eyebrow light">Predators MMA &amp; BJJ Academy <span className="eyebrow-line" /></p>
               <h1 id="hero-title">GET ON<br />THE <em>MATS.</em></h1>
-              <p className="hero-lede">Brazilian jiu-jitsu, kickboxing and MMA in Manchester. Learn the fundamentals, train with good people, and keep getting better.</p>
+              <p className="hero-lede">Brazilian jiu-jitsu, kickboxing and MMA in Manchester. Beginners welcome. Learn the fundamentals, train with good people, and keep getting better.</p>
               <div className="hero-actions">
                 <a className="button button-accent" href={enquiry('Book my free introductory class')}>Book your free class <span aria-hidden="true">↗</span></a>
                 <a className="text-link light-link" href="#timetable">View the timetable <span aria-hidden="true">↓</span></a>
@@ -105,6 +105,21 @@ export default function Home() {
           </div>
         </div></section>
 
+        <section className="section social-section" id="instagram" aria-labelledby="social-title"><div className="wrap">
+          <div className="social-heading">
+            <div><p className="eyebrow light">Inside the academy</p><h2 id="social-title">SEE THE<br />WORK UP CLOSE.</h2></div>
+            <div><p>From padwork to grappling rounds, the best way to understand Predators is to see the team train. Follow the gym for a closer look.</p>
+              <a className="button button-accent" href="https://www.instagram.com/predators_mma_gym/" target="_blank" rel="noopener noreferrer">Follow @predators_mma_gym <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div className="social-gallery">
+            <figure><div className="social-photo"><Image src="/images/predators-padwork.jpg" alt="Predators member working punches with a coach holding pads" fill sizes="(max-width: 650px) 90vw, 34vw" /></div><figcaption><span>01 / STRIKING</span><strong>PUT IN THE ROUNDS.</strong></figcaption></figure>
+            <figure><div className="social-photo"><Image src="/images/predators-gi-training.jpg" alt="Two Predators members practising Brazilian jiu-jitsu in the Gi" fill sizes="(max-width: 650px) 90vw, 30vw" /></div><figcaption><span>02 / GI</span><strong>LEARN THE DETAILS.</strong></figcaption></figure>
+            <figure><div className="social-photo"><Image src="/images/predators-nogi-training.jpg" alt="Predators members practising No-Gi grappling in class" fill sizes="(max-width: 650px) 90vw, 34vw" /></div><figcaption><span>03 / NO-GI</span><strong>KEEP MOVING.</strong></figcaption></figure>
+          </div>
+          <p className="social-credit">Training photographs from the academy website. See the gym&apos;s Instagram for current posts.</p>
+        </div></section>
+
         <section className="quote-section" aria-label="Member testimonial"><div className="wrap quote-inner">
           <span className="quote-mark" aria-hidden="true">“</span>
           <blockquote><p>I thought it would be really intimidating. How wrong I was! Predators is welcoming for all abilities.</p><footer>Mike / Predators member</footer></blockquote>
@@ -117,6 +132,7 @@ export default function Home() {
             <div><span>01 / VISIT</span><p>1st Floor, 15 Chatley Street<br />Entrance on Whitfield Street<br />Manchester M3 1HU</p><a href="https://www.google.com/maps/search/?api=1&query=15+Chatley+Street+Manchester+M3+1HU" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div>
             <div><span>02 / CALL</span><a href="tel:+447897313488">07897 313 488 ↗</a></div>
             <div><span>03 / EMAIL</span><a href={'mailto:' + email}>{email} ↗</a></div>
+            <div><span>04 / FOLLOW</span><a href="https://www.instagram.com/predators_mma_gym/" target="_blank" rel="noopener noreferrer">@predators_mma_gym ↗</a></div>
           </div>
         </div></section>
       </main>
