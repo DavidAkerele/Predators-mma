@@ -32,7 +32,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 section[id] { scroll-margin-top: 88px; }
 body { min-width: 320px; margin: 0; background: var(--ink); color: var(--cream); font-family: 'DM Sans', Arial, sans-serif; }
 body, button { -webkit-font-smoothing: antialiased; }

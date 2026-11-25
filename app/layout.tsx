@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import Navigation from './navigation';
+import RouteScroll from './route-scroll';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <span>All levels welcome <span aria-hidden="true">/</span> Your first class is free</span>
         </div></div>
         <Navigation />
+        <RouteScroll />
         {children}
         <footer className="site-footer"><div className="wrap footer-inner">
           <Link className="footer-brand" href="/">Predators MMA</Link>
