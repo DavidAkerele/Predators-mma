@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { pageMetadata } from '../metadata';
+import PageHero from '../page-hero';
 export const metadata: Metadata = pageMetadata('Our Academy | Predators MMA Manchester', 'Meet Predators MMA and BJJ Academy, founded in Manchester in 2006. A welcoming place to train Brazilian jiu-jitsu, kickboxing and MMA.', '/about');
 export default function AboutPage() { return <main id="main">
-<section className="page-intro"><div className="wrap"><p className="eyebrow light">Our academy</p><h1>Built on good training.<br /><em>And good people.</em></h1><p>Since 2006, Predators has brought people together to learn, work hard and improve on the mats in Manchester.</p></div></section>
+<PageHero eyebrow="Our academy" title={<>Built on good training.<br /><em>And good people.</em></>} description="Since 2006, Predators has brought people together to learn, work hard and improve on the mats in Manchester." image="/images/predators-about-hero.webp" imageAlt="Predators members and coaches together after training" imagePosition="52% 47%" />
         <section className="section story-section" id="about" aria-labelledby="story-title"><div className="wrap story-grid">
           <div className="story-image"><Image src="/images/predators-nogi.jpg" alt="Coach demonstrating a grappling technique to a Predators class" fill sizes="(max-width: 760px) 100vw, 48vw" /><span className="image-caption">THE WORK IS BETTER TOGETHER.</span></div>
           <div className="story-copy"><p className="eyebrow">Our academy</p><h2 id="story-title">Train hard.<br /><em>Feel at home.</em></h2>

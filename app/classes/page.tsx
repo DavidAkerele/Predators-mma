@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { pageMetadata } from '../metadata';
+import PageHero from '../page-hero';
 
 export const metadata: Metadata = pageMetadata('Classes | Predators MMA Manchester', 'Explore Brazilian jiu-jitsu, kickboxing and mixed martial arts at Predators MMA and BJJ Academy in Manchester.', '/classes');
 
@@ -13,7 +14,7 @@ const classes = [
 
 export default function ClassesPage() {
   return <main id="main">
-    <section className="page-intro"><div className="wrap"><p className="eyebrow light">Train with us</p><h1>Find your<br /><em>discipline.</em></h1><p>Three ways to train. A place for people starting from scratch and those sharpening their skills.</p></div></section>
+    <PageHero eyebrow="Train with us" title={<>Find your<br /><em>discipline.</em></>} description="Three ways to train. A place for people starting from scratch and those sharpening their skills." image="/images/predators-classes-hero.webp" imageAlt="Predators coach helping a member practise Brazilian jiu-jitsu" imagePosition="58% 48%" />
     <section className="section class-index-section"><div className="wrap">
       <div className="class-index-intro"><p className="eyebrow light">Adult programmes</p><p>Start with a fundamentals class or explore the advanced sessions. Your first introductory class is free.</p></div>
       <div className="class-index-list">

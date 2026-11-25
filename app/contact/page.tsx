@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight, Camera, Mail, MapPin, Phone } from 'lucide-react';
 import { pageMetadata } from '../metadata';
+import PageHero from '../page-hero';
 const email = 'predatorsmmagym@gmail.com';
 const enquiry = (subject: string) => 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
 export const metadata: Metadata = pageMetadata('Contact & Visit | Predators MMA Manchester', 'Book a free introductory class at Predators MMA and BJJ Academy. Find us at 15 Chatley Street, Manchester M3 1HU.', '/contact');
 export default function ContactPage() { return <main id="main">
-<section className="page-intro"><div className="wrap"><p className="eyebrow light">Come train with us</p><h1>Ready to<br /><em>get started?</em></h1><p>Beginners are welcome. Tell us which class interests you and we&apos;ll help you plan your first visit.</p></div></section>
+<PageHero eyebrow="Come train with us" title={<>Ready to<br /><em>get started?</em></>} description="Beginners are welcome. Tell us which class interests you and we'll help you plan your first visit." image="/images/predators-contact-hero.jpg" imageAlt="Predators Brazilian jiu-jitsu coaches together at the academy" imagePosition="61% 42%" />
         <section className="visit-section" id="contact" aria-labelledby="visit-title"><div className="wrap visit-grid">
           <div><p className="eyebrow">Your first step</p><h2 id="visit-title">Your first class<br /><em>starts here.</em></h2><p>Tell us what you&apos;d like to try. We&apos;ll help you find the right first class.</p><a className="button button-accent" href={enquiry('Book my free class at Predators MMA')}>Book your free class <ArrowUpRight aria-hidden="true" /></a></div>
           <div className="visit-details">

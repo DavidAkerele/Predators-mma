@@ -2,9 +2,10 @@ import Image from 'next/image';
 import { ArrowUpRight, Camera } from 'lucide-react';
 import type { Metadata } from 'next';
 import { pageMetadata } from '../metadata';
+import PageHero from '../page-hero';
 export const metadata: Metadata = pageMetadata('Videos & Life on the Mats | Predators MMA', 'See Brazilian jiu-jitsu, kickboxing and MMA training at Predators in Manchester. Watch academy videos and visit our Instagram Reels.', '/videos');
 export default function VideosPage() { return <main id="main">
-<section className="page-intro"><div className="wrap"><p className="eyebrow light">The gym in action</p><h1>See life<br /><em>on the mats.</em></h1><p>Get a feel for the sessions, the people and the work before you step through the door.</p></div></section>
+<PageHero eyebrow="The gym in action" title={<>See life<br /><em>on the mats.</em></>} description="Get a feel for the sessions, the people and the work before you step through the door." image="/images/predators-videos-hero.jpg" imageAlt="Predators member practising striking during a gym session" imagePosition="58% 48%" />
         <section className="section social-section" id="instagram" aria-labelledby="social-title"><div className="wrap">
           <div className="social-heading">
             <div><p className="eyebrow light">Inside the academy</p><h2 id="social-title">Life on<br />the mats.</h2></div>
