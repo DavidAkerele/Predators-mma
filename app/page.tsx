@@ -89,8 +89,8 @@ export default function Home() {
         </div></section>
 
         <section className="section home-voices" aria-labelledby="voices-title"><div className="wrap"><div className="home-voices-heading"><p className="eyebrow">What members say</p><h2 id="voices-title">A place to belong.</h2></div><div className="home-voices-grid">
-          <blockquote className="home-voice-featured"><p>“Welcoming for all abilities.”</p><footer>Mike / Predators member</footer></blockquote>
-          <div><blockquote><p>“Something special about the place.”</p><footer>Steve / Predators member</footer></blockquote><blockquote><p>“An ego free zone.”</p><footer>Wasim / Predators member</footer></blockquote></div>
+          <blockquote className="home-voice-featured"><p>“Welcoming for all abilities.”</p><footer>Efosa / Predators member</footer></blockquote>
+          <div><blockquote><p>“Something special about the place.”</p><footer>Joe / Predators member</footer></blockquote><blockquote><p>“An ego free zone.”</p><footer>David / Predators member</footer></blockquote></div>
         </div></div></section>
 
         <section className="section home-youth" aria-labelledby="youth-title"><div className="wrap home-youth-grid">
