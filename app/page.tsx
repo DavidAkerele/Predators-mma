@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Dumbbell, ShieldCheck, UsersRound, Camera } from 'lucide-react';
 
 const email = 'predatorsmmagym@gmail.com';
 const enquiry = (subject: string) => 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
@@ -36,6 +36,17 @@ export default function Home() {
           <a className="text-link" href="/about">Meet the academy <ArrowUpRight aria-hidden="true" /></a>
         </div></section>
 
+        <section className="section home-benefits" aria-labelledby="benefits-title"><div className="wrap home-benefits-grid">
+          <div className="home-benefits-photo"><Image src="/images/predators-home-benefits.jpg" alt="A Predators member practising a kickboxing kick with a pad holder" fill sizes="(max-width: 800px) 100vw, 48vw" /><span>GET FIT WHILE LEARNING MARTIAL ARTS</span></div>
+          <div className="home-benefits-copy"><p className="eyebrow">More than a workout</p><h2 id="benefits-title">Build skill.<br />Feel stronger.</h2><p>Train your body, learn useful skills and become part of something positive. Classes give you a place to work on strength, balance and confidence while learning martial arts.</p>
+            <div className="home-benefit-list">
+              <div><Dumbbell aria-hidden="true" /><div><h3>Move with purpose</h3><p>Work on fitness, flexibility and coordination through real training.</p></div></div>
+              <div><ShieldCheck aria-hidden="true" /><div><h3>Learn practical skills</h3><p>Develop striking, grappling and self-defence fundamentals with coaches.</p></div></div>
+              <div><UsersRound aria-hidden="true" /><div><h3>Train together</h3><p>Find partners who help you improve, whatever brought you to the gym.</p></div></div>
+            </div>
+          </div>
+        </div></section>
+
         <section className="section classes-section" id="classes" aria-labelledby="classes-title"><div className="wrap">
           <div className="section-heading">
             <div><p className="eyebrow">Find your discipline</p><h2 id="classes-title">Find your<br />class.</h2></div>
@@ -63,15 +74,33 @@ export default function Home() {
           </div>
         </div></section>
 
-        <section className="quote-section" aria-label="Member testimonial"><div className="wrap quote-inner">
-          <span className="quote-mark" aria-hidden="true">“</span>
-          <blockquote><p>I thought it would be really intimidating. How wrong I was! Predators is welcoming for all abilities.</p><footer>Mike / Predators member</footer></blockquote>
-          <span className="quote-rule" aria-hidden="true" />
+        <section className="section home-founder" aria-labelledby="founder-title"><div className="wrap home-founder-grid">
+          <div className="home-founder-copy"><p className="eyebrow light">Since 2006</p><h2 id="founder-title">Built by people<br /><em>who love training.</em></h2><p>Gavin Boardman founded Predators to create a positive place to learn and improve. His approach starts with solid fundamentals, small improvements and a room where the group helps each person grow.</p><p>White belt or black belt, first timer or fighter: everyone shares the mats and leaves their ego at the door.</p><Link className="text-link light-link" href="/about">Meet the academy <ArrowUpRight aria-hidden="true" /></Link></div>
+          <div className="home-founder-photo"><Image src="/images/predators-home-story.jpg" alt="Two members practising a grappling takedown at Predators" fill sizes="(max-width: 800px) 100vw, 48vw" /><span>THE GROUP MAKES YOU BETTER.</span></div>
         </div></section>
 
-    <section className="section home-next"><div className="wrap home-next-grid">
+        <section className="section home-gallery" aria-labelledby="gallery-title"><div className="wrap">
+          <div className="section-heading home-gallery-heading"><div><p className="eyebrow light">Inside the gym</p><h2 id="gallery-title">The work<br />looks like this.</h2></div><div><p>Padwork, partner drills and rounds on the mats. Every session is a chance to learn something and put it into practice.</p><Link className="text-link light-link" href="/videos">Watch the team train <Camera aria-hidden="true" /></Link></div></div>
+          <div className="home-gallery-grid">
+            <figure><div><Image src="/images/predators-home-kickboxing.jpg" alt="Predators member kicking a pad during kickboxing training" fill sizes="(max-width: 700px) 80vw, 33vw" /></div><figcaption>01 / KICKBOXING</figcaption></figure>
+            <figure><div><Image src="/images/predators-home-striking.jpg" alt="Two Predators members practising striking drills" fill sizes="(max-width: 700px) 80vw, 33vw" /></div><figcaption>02 / PARTNER DRILLS</figcaption></figure>
+            <figure><div><Image src="/images/predators-home-rounds.jpg" alt="Predators members practising a knee strike on the mats" fill sizes="(max-width: 700px) 80vw, 33vw" /></div><figcaption>03 / PUT IN THE ROUNDS</figcaption></figure>
+          </div>
+        </div></section>
+
+        <section className="section home-voices" aria-labelledby="voices-title"><div className="wrap"><div className="home-voices-heading"><p className="eyebrow">What members say</p><h2 id="voices-title">A place to belong.</h2></div><div className="home-voices-grid">
+          <blockquote className="home-voice-featured"><p>“Welcoming for all abilities.”</p><footer>Mike / Predators member</footer></blockquote>
+          <div><blockquote><p>“Something special about the place.”</p><footer>Steve / Predators member</footer></blockquote><blockquote><p>“An ego free zone.”</p><footer>Wasim / Predators member</footer></blockquote></div>
+        </div></div></section>
+
+        <section className="section home-youth" aria-labelledby="youth-title"><div className="wrap home-youth-grid">
+          <div className="home-youth-photo"><Image src="/images/predators-home-youth.jpg" alt="Two young students practising Brazilian jiu-jitsu at Predators" fill sizes="(max-width: 800px) 100vw, 45vw" /></div>
+          <div className="home-youth-copy"><p className="eyebrow">For younger athletes</p><h2 id="youth-title">A good start<br />on the mats.</h2><p>The academy also offers martial arts for children and young people. The programme focuses on focus, discipline, respect and confidence through energetic training.</p><p>Ask the team about current youth sessions and the right class for your child.</p><Link className="button button-dark" href="/contact">Ask about youth classes <ArrowUpRight aria-hidden="true" /></Link></div>
+        </div></section>
+
+    <section className="section home-next"><div className="home-next-photo"><Image src="/images/predators-home-cta.jpg" alt="Predators members working through striking drills on the mats" fill sizes="100vw" /></div><div className="wrap home-next-grid">
       <div><p className="eyebrow light">Plan your first visit</p><h2>Find your time.<br />Find your people.</h2></div>
-      <div><p>Morning and evening training, fundamentals and advanced sessions, plus Gi and No-Gi BJJ. See the full adult timetable and find a class that fits.</p><Link className="button button-accent" href="/timetable">Explore the timetable <ArrowUpRight aria-hidden="true" /></Link><Link className="text-link light-link" href="/contact">Get in touch <ArrowUpRight aria-hidden="true" /></Link></div>
+      <div><p>Weekday evening and Saturday training, fundamentals and advanced sessions, plus Gi and No-Gi BJJ. See the full adult timetable and find a class that fits.</p><Link className="button button-accent" href="/timetable">Explore the timetable <ArrowUpRight aria-hidden="true" /></Link><Link className="text-link light-link" href="/contact">Get in touch <ArrowUpRight aria-hidden="true" /></Link></div>
     </div></section>
   </main>;
 }
