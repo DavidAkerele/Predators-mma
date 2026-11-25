@@ -100,7 +100,7 @@ export default function Home() {
 
     <section className="section home-next"><div className="home-next-photo"><Image src="/images/predators-home-cta.jpg" alt="Predators members working through striking drills on the mats" fill sizes="100vw" /></div><div className="wrap home-next-grid">
       <div><p className="eyebrow light">Plan your first visit</p><h2>Find your time.<br />Find your people.</h2></div>
-      <div><p>Weekday evening and Saturday training, fundamentals and advanced sessions, plus Gi and No-Gi BJJ. See the full adult timetable and find a class that fits.</p><Link className="button button-accent" href="/timetable">Explore the timetable <ArrowUpRight aria-hidden="true" /></Link><Link className="text-link light-link" href="/contact">Get in touch <ArrowUpRight aria-hidden="true" /></Link></div>
+      <div><p>Weekday evening and Saturday training, fundamentals and advanced sessions, plus Gi and No-Gi BJJ. See the full adult timetable and find a class that fits.</p><div className="action-row"><Link className="button button-accent" href="/timetable">Explore the timetable <ArrowUpRight aria-hidden="true" /></Link><Link className="text-link light-link" href="/contact">Get in touch <ArrowUpRight aria-hidden="true" /></Link></div></div>
     </div></section>
   </main>;
 }

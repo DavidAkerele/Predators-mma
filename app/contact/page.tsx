@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight, Camera, Mail, MapPin, Phone } from 'lucide-react';
+import { pageMetadata } from '../metadata';
 const email = 'predatorsmmagym@gmail.com';
 const enquiry = (subject: string) => 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
-export const metadata: Metadata = { title: 'Contact & Visit | Predators MMA Manchester', description: 'Book a free introductory class at Predators MMA and BJJ Academy. Find us at 15 Chatley Street, Manchester M3 1HU.' };
+export const metadata: Metadata = pageMetadata('Contact & Visit | Predators MMA Manchester', 'Book a free introductory class at Predators MMA and BJJ Academy. Find us at 15 Chatley Street, Manchester M3 1HU.', '/contact');
 export default function ContactPage() { return <main id="main">
 <section className="page-intro"><div className="wrap"><p className="eyebrow light">Come train with us</p><h1>Ready to<br /><em>get started?</em></h1><p>Beginners are welcome. Tell us which class interests you and we&apos;ll help you plan your first visit.</p></div></section>
         <section className="visit-section" id="contact" aria-labelledby="visit-title"><div className="wrap visit-grid">

@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { pageMetadata } from '../metadata';
 
-export const metadata: Metadata = {
-  title: 'Classes | Predators MMA Manchester',
-  description: 'Explore Brazilian jiu-jitsu, kickboxing and mixed martial arts at Predators MMA and BJJ Academy in Manchester.',
-};
+export const metadata: Metadata = pageMetadata('Classes | Predators MMA Manchester', 'Explore Brazilian jiu-jitsu, kickboxing and mixed martial arts at Predators MMA and BJJ Academy in Manchester.', '/classes');
 
 const classes = [
   { number: '01', name: 'Brazilian jiu-jitsu', note: 'Grappling / Gi & No-Gi', text: 'Learn to control, escape and submit on the ground. Build your foundation, then explore Gi and No-Gi training.', href: '/classes/bjj', formats: 'Fundamentals · Gi advanced · No-Gi advanced' },

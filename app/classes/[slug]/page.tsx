@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowUpRight, Check } from 'lucide-react';
+import { pageMetadata } from '../../metadata';
 
 const classes = {
   bjj: {
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (!(slug in classes)) return {};
   const item = classes[slug as Slug];
-  return { title: `${item.eyebrow} Classes | Predators MMA Manchester`, description: item.lead, openGraph: { images: [item.image] } };
+  return pageMetadata(`${item.eyebrow} classes | Predators MMA Manchester`, item.lead, `/classes/${slug}`);
 }
 
 export default async function ClassPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -54,6 +55,6 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
   return <main id="main">
     <section className="class-hero"><div className="class-hero-image"><Image src={item.image} alt={item.alt} fill priority sizes="(max-width: 800px) 100vw, 60vw" /></div><div className="class-hero-wash" /><div className="wrap class-hero-content"><Link href="/classes" className="class-back"><ArrowLeft aria-hidden="true" /> All classes</Link><p className="eyebrow light">{item.eyebrow} / Predators Manchester</p><h1>{item.title}</h1><p>{item.lead}</p><Link className="button button-accent" href="/contact">Try a free class <ArrowUpRight aria-hidden="true" /></Link></div></section>
     <section className="section class-detail-section"><div className="wrap class-detail-grid"><div><p className="eyebrow">The discipline</p><h2>Start here.<br />Keep growing.</h2><p>{item.intro}</p></div><div className="class-formats"><p className="eyebrow">Training formats</p>{item.formats.map((format) => <div className="class-format" key={format.name}><Check aria-hidden="true" /><div><h3>{format.name}</h3><p>{format.text}</p></div></div>)}</div></div></section>
-    <section className="section class-times-section"><div className="wrap class-times-grid"><div><p className="eyebrow light">When to train</p><h2>Find your<br />time on the mats.</h2></div><div><p>{item.timetable}</p><Link className="button button-accent" href="/timetable">View the full timetable <ArrowUpRight aria-hidden="true" /></Link><Link className="text-link light-link" href="/contact">Ask us a question <ArrowUpRight aria-hidden="true" /></Link></div></div></section>
+    <section className="section class-times-section"><div className="wrap class-times-grid"><div><p className="eyebrow light">When to train</p><h2>Find your<br />time on the mats.</h2></div><div><p>{item.timetable}</p><div className="action-row"><Link className="button button-accent" href="/timetable">View the full timetable <ArrowUpRight aria-hidden="true" /></Link><Link className="text-link light-link" href="/contact">Ask us a question <ArrowUpRight aria-hidden="true" /></Link></div></div></div></section>
   </main>;
 }

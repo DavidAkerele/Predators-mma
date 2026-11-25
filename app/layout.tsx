@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { pageMetadata } from './metadata';
 import Navigation from './navigation';
 import RouteScroll from './route-scroll';
+import SiteFooter from './site-footer';
 import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://predator-mma.vercel.app'),
-  title: 'Predators MMA & BJJ Academy | Manchester',
-  description: 'Train Brazilian jiu-jitsu, kickboxing and MMA at Predators in Manchester. Explore Gi and No-Gi classes, check the adult timetable and book a free introductory class.',
-  openGraph: {
-    title: 'Predators MMA & BJJ Academy',
-    description: 'BJJ, kickboxing and MMA in Manchester. Find your class and get on the mats.',
-    images: [{ url: '/images/predators-training.jpg', width: 1920, height: 1200, alt: 'Predators MMA kickboxing training' }],
-  },
+  ...pageMetadata('Predators MMA & BJJ Academy | Manchester', 'Train Brazilian jiu-jitsu, kickboxing and MMA at Predators in Manchester. Explore Gi and No-Gi classes, check the adult timetable and book a free introductory class.', '/'),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -33,11 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navigation />
         <RouteScroll />
         {children}
-        <footer className="site-footer"><div className="wrap footer-inner">
-          <Link className="footer-brand" href="/">Predators MMA</Link>
-          <span>© 2026 Predators MMA &amp; BJJ Academy</span>
-          <Link href="/contact">Come train with us <ArrowUpRight aria-hidden="true" /></Link>
-        </div></footer>
+        <SiteFooter />
       </body>
     </html>
   );

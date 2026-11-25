@@ -2,7 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import type { Metadata } from 'next';
-export const metadata: Metadata = { title: 'Our Academy | Predators MMA Manchester', description: 'Meet Predators MMA and BJJ Academy, founded in Manchester in 2006. A welcoming place to train Brazilian jiu-jitsu, kickboxing and MMA.' };
+import { pageMetadata } from '../metadata';
+export const metadata: Metadata = pageMetadata('Our Academy | Predators MMA Manchester', 'Meet Predators MMA and BJJ Academy, founded in Manchester in 2006. A welcoming place to train Brazilian jiu-jitsu, kickboxing and MMA.', '/about');
 export default function AboutPage() { return <main id="main">
 <section className="page-intro"><div className="wrap"><p className="eyebrow light">Our academy</p><h1>Built on good training.<br /><em>And good people.</em></h1><p>Since 2006, Predators has brought people together to learn, work hard and improve on the mats in Manchester.</p></div></section>
         <section className="section story-section" id="about" aria-labelledby="story-title"><div className="wrap story-grid">
